@@ -1,3 +1,5 @@
+use std::num::ParseIntError;
+
 fn main() {
   println!("Hello, world!");
   /*
@@ -15,6 +17,7 @@ fn main() {
   repeat();
   ownership();
   slice();
+  error_handler();
 }
 
 /*
@@ -165,4 +168,25 @@ fn slice() {
 // 즉 &str 타입의 파라미터에 String 타입과 String 리터럴을 모두 받을 수 있게 된다
 fn slice_fn(str: &str) {
   println!("str: {}", str);
+}
+
+fn error_handler() {
+  let num = default_str("ㅂㅈㄷㅂㅈㄷㅂㅈㄷ");
+
+  println!("{}", num);
+}
+
+fn default_str(num_str: &str) -> i32 {
+  // 예외 발생시 특정 값으로 맵핑 할 수 있음
+  String::from(num_str).parse().unwrap_or(0)
+  // 대부분의 함수는 Result 인터페이스를 따름, 그리고 매치 표현식으로 처리해서 성공, 실패에 대해여 처리,
+  // 실패 또는 성공에 대해서 로직이 늘어나면 매치로 처리하는게 좋아보임, 간단한 기본값을 가지는 경우 unwrap_or으로 처리하는게 좋음
+  // match String::from(num_str).parse() {
+  //   Ok(num) => {
+  //     num
+  //   },
+  //   Err(e) => {
+  //     0
+  //   }
+  // }
 }

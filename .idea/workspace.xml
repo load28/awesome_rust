@@ -50,13 +50,16 @@
   </component>
   <component name="RunManager">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package untitled1 --bin untitled1" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
@@ -90,29 +93,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="228" key="#Rust" timestamp="1603712469024">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1612605107799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="734" y="228" key="#Rust/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603712469024" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603804942877">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1920.11.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1612605107799" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1606562413608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603804942877" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1603804942877">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603804942877" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1603804942877">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603804942877" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1603804942877">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603804942877" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1603711510665">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.2.1920.1040@0.0.1920.1040" timestamp="1603711510665" />
+    <state x="461" y="164" key="SettingsEditor/-1920.11.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606562413608" />
   </component>
 </project>
