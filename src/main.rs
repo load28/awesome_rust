@@ -1,27 +1,43 @@
+mod collection;
+mod module;
 mod rust_enum;
 mod rust_struct;
+// use rand::Rng;
 
+// fn generate_random_usize() -> usize {
+//     let mut rng = rand::thread_rng();
+//     rng.gen()
+// }
 fn main() {
-    println!("Hello, world!");
+    collection::run();
+    // let ran_num = generate_random_usize();
+    // let arr = [1, 2, 3, 4];
+    // if arr.len() < ran_num {
+    //     println!("Error");
+    // } else {
+    //     println!("{}", arr[ran_num]);
+    // }
+    // let result = arr[ran_num];
+    // println!("Hello, world!");
     /*
     배열은 고정적인 데이터를 가질 때 사용함
     스택에 데이터가 쌓임
      */
-    let a = [1, 2, 3, 4];
-    let one = a[0];
-    let two = a[1];
+    // let a = [1, 2, 3, 4];
+    // let one = a[0];
+    // let two = a[1];
 
     // 함수 호출은 표현식
-    let value = test(29);
-    println!("return value is {}", value);
-    condition();
-    repeat();
-    ownership();
-    slice();
-    error_handler();
+    // let value = test(29);
+    // println!("return value is {}", value);
+    // condition();
+    // repeat();
+    // ownership();
+    // slice();
+    // error_handler();
 
-    rust_struct::rust_struct();
-    rust_enum::rust_enum();
+    // rust_struct::rust_struct();
+    // rust_enum::rust_enum();
 }
 
 /*
@@ -65,29 +81,29 @@ fn condition() {
 }
 
 fn repeat() {
-  let mut number = 3;
+    let mut number = 3;
 
-  while number != 0 {
-    println!("number repeat = {}", number);
-    number -= 1;
-  }
+    while number != 0 {
+        println!("number repeat = {}", number);
+        number -= 1;
+    }
 
-  let array = [1,2,3,4];
-  let mut index = 0;
-  // 일반적인 while문
-  while index < array.len() {
-    println!("array index = {}", array[index]);
-    index += 1;
-  }
+    let array = [1, 2, 3, 4];
+    let mut index = 0;
+    // 일반적인 while문
+    while index < array.len() {
+        println!("array index = {}", array[index]);
+        index += 1;
+    }
 
-  // 자바스크립트처럼 이터레이터를 이용해 안전하게 순회
-  for number in array.iter() {
-    println!("array iter = {}", number);
-  }
+    // 자바스크립트처럼 이터레이터를 이용해 안전하게 순회
+    for number in array.iter() {
+        println!("array iter = {}", number);
+    }
 
-  for number in (1..3).rev() {
-    println!("range number = {}", number);
-  }
+    for number in (1..3).rev() {
+        println!("range number = {}", number);
+    }
 }
 
 // 소유권은 러스트의 가장 큰 특성으로 가비지 컬렉션 없이 메모리의 안정성을 보장해주는 방법이다
@@ -170,26 +186,26 @@ fn slice() {
 
 // 즉 &str 타입의 파라미터에 String 타입과 String 리터럴을 모두 받을 수 있게 된다
 fn slice_fn(str: &str) {
-  println!("str: {}", str);
+    println!("str: {}", str);
 }
 
 fn error_handler() {
-  let num = default_str("222232323");
+    let num = default_str("222232323");
 
-  println!("{}", num);
+    println!("{}", num);
 }
 
 fn default_str(num_str: &str) -> i32 {
-  // 예외 발생시 특정 값으로 맵핑 할 수 있음
-  String::from(num_str).parse().unwrap_or(0)
-  // 대부분의 함수는 Result 인터페이스를 따름, 그리고 매치 표현식으로 처리해서 성공, 실패에 대해여 처리,
-  // 실패 또는 성공에 대해서 로직이 늘어나면 매치로 처리하는게 좋아보임, 간단한 기본값을 가지는 경우 unwrap_or으로 처리하는게 좋음
-  // match String::from(num_str).parse() {
-  //   Ok(num) => {
-  //     num
-  //   },
-  //   Err(e) => {
-  //     0
-  //   }
-  // }
+    // 예외 발생시 특정 값으로 맵핑 할 수 있음
+    String::from(num_str).parse().unwrap_or(0)
+    // 대부분의 함수는 Result 인터페이스를 따름, 그리고 매치 표현식으로 처리해서 성공, 실패에 대해여 처리,
+    // 실패 또는 성공에 대해서 로직이 늘어나면 매치로 처리하는게 좋아보임, 간단한 기본값을 가지는 경우 unwrap_or으로 처리하는게 좋음
+    // match String::from(num_str).parse() {
+    //   Ok(num) => {
+    //     num
+    //   },
+    //   Err(e) => {
+    //     0
+    //   }
+    // }
 }
