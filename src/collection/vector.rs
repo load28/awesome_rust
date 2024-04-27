@@ -3,6 +3,7 @@ pub fn run() {
     update_vector();
     read_vector();
     iterate_vector();
+    enum_vector();
 }
 
 fn create_vector() {
@@ -56,5 +57,29 @@ fn iterate_vector() {
         // 역참조 연산자를 이용하여 가변 백터의 값을 변경 할 수 있음
         *i += 1;
         // v.push(6); -> 반복자 안에서 벡터를 변경하면 컴파일러는 오류를 발생시킴
+    }
+}
+
+fn enum_vector() {
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    // vector는 생성되는 시점에 데이터의 크기를 알아야 하기 때문에 타입이 지정되어야 한다.
+    // 이때 enum을 사용하여 다양한 타입을 지정할 수 있다.
+    // 이것이 가능한 이유는 rust에서는 match를 통해서 모든 타입에 대한 처리를 보장하기 때문이다.
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Float(10.12),
+        SpreadsheetCell::Text(String::from("blue")),
+    ];
+
+    match row.get(0) {
+        Some(SpreadsheetCell::Int(value)) => println!("enum_vector => Int: {}", value),
+        Some(SpreadsheetCell::Float(value)) => println!("enum_vector => Float: {}", value),
+        Some(SpreadsheetCell::Text(value)) => println!("enum_vector => Text: {}", value),
+        None => println!("enum_vector => None"),
     }
 }
